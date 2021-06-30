@@ -1,0 +1,26 @@
+GET http://localhost:3000/product/60d45b5e59da1a92572d01ff HTTP/1.1
+### PUT Requests
+PUT http://localhost:3000/product/60d45b5e59da1a92572d01ff HTTP/1.1
+User-Agent:rest-client
+
+{"Name":"Rempelo Enak"}
+
+###
+POST http://localhost:3000/coba HTTP/1.1
+User-Agent:rest-client
+
+<request>
+    <name>sample</name>
+    <time>Wed, 21 Oct 2015 18:27:50 GMT</time>
+</request>
+
+###
+POST https://jsonplaceholder.typicode.com/posts HTTP/1.1
+User-Agent:rest-client
+
+
+{
+    "id": "k123412341234",
+    "name": "Samwell",
+    "dept": "Citadel"
+}

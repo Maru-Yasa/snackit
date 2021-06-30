@@ -1,0 +1,104 @@
+<style>
+  #animation-demo {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    background-color: #62A80A;
+    line-height: 150px;
+    color: #000;
+    border: solid 1px #1A7404;
+    text-align: center;
+  } 
+  
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes bounceIn { 
+      0% { 
+          opacity: 0; 
+          -webkit-transform: scale(.3); 
+      } 
+  
+      50% { 
+          opacity: 1; 
+          -webkit-transform: scale(1.05); 
+      } 
+  
+      70% { 
+          -webkit-transform: scale(.9); 
+      } 
+  
+      100% { 
+           -webkit-transform: scale(1); 
+      } 
+  } 
+  
+  @keyframes bounceIn { 
+      0% { 
+          opacity: 0; 
+          transform: scale(.3); 
+      } 
+  
+      50% { 
+          opacity: 1; 
+          transform: scale(1.05); 
+      } 
+  
+      70% { 
+          transform: scale(.9); 
+      } 
+  
+      100% { 
+          transform: scale(1); 
+      } 
+  } 
+  
+  .bounceIn { 
+      -webkit-animation-name: bounceIn; 
+      animation-name: bounceIn; 
+  }
+  
+  </style>
+  <style>
+    #animation-demo {
+      width: 200px;
+      height: 150px;
+      position: relative;
+      background-color: #62A80A;
+      line-height: 150px;
+      color: #000;
+      border: solid 1px #1A7404;
+      text-align: center;
+    } 
+    
+    .animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    
+    @-webkit-keyframes tada { 
+        0% {-webkit-transform: scale(1);} 
+        10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);} 
+        30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);} 
+        40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);} 
+        100% {-webkit-transform: scale(1) rotate(0);} 
+    } 
+    @keyframes tada { 
+        0% {transform: scale(1);} 
+        10%, 20% {transform: scale(0.9) rotate(-3deg);} 
+        30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);} 
+        40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);} 
+        100% {transform: scale(1) rotate(0);} 
+    } 
+    .tada { 
+        -webkit-animation-name: tada; 
+        animation-name: tada; 
+    }
+    
+    </style>

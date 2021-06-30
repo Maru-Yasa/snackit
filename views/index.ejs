@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('bootstrap') %> 
+    <title>Snack It</title>
+</head>
+<%- include('fonts') %> 
+<%- include('animate') %> 
+
+<style>
+
+    .navbar{
+        font-family: 'Montserrat', sans-serif;
+    }
+    .my-text{
+        font-family: 'Montserrat', sans-serif;
+    }
+
+</style>
+<body>
+
+    <nav class="navbar navbar-light bg-warning">
+        <div class="container-fluid fw-bold">
+          <a class="navbar-brand animated tada" href="/">
+            Snack<span class="text-light">.</span>It
+          </a>
+          <div class="" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/admin">Admin</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-11 mt-2">
+                <h1 class="my-text text-center text-dark fw-bold">
+                    <span class="fw-bold text-warning">
+                     <%= data.length %>
+                    </span> 
+                    Products Available
+                </h1>
+            </div>
+            <div class="col-10 col-md-7 col-lg-6 mt-3">
+                <form action="/" method="get">
+                    <div class="input-group my-text rounded-pill">
+                        <input class="form-control rounded-pill py-2 bg-muted  mr-1 pr-5" name="query" type="search" placeholder="cari">
+                        <button class="btn btn-light rounded-pill mx-2" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="container border-top border-2 mt-4">
+        <div class="row justify-content-center mt-5">
+            <% if (data) { %>
+
+
+                
+                
+                
+                
+                
+                <%data !== undefined ? data.forEach(e => { %>
+
+                    <div class="col-10 col-md-4 my-3 animated bounceIn">
+                        <a data-bs-toggle="modal" data-bs-target="#<%= e._id %> >">
+                            <div class="card my-text rounded shadow text-black  bg-warning mb-3">
+                                <img class="card-img-top" src="" alt="" style="max-width: 19rem;">
+                                <div class="card-body">
+                                    <h4 class="card-title fw-bold"><%= e.Name %> </h4>
+                                    <p class="card-text">
+                                        1 Ons  = <%= e['1ons'] %>
+                                        <br>
+                                        1/4 Kg = <%= e['1/4kg'] %>  
+                                        <br>
+                                        1/2 Kg = <%= e['1/2kg'] %>  
+                                        <br>
+                                        1 Kg   = <%= e['1kg'] %>  
+                                    </p>
+                                </div>
+                                <div class="card-footer text-black" style="text-overflow: ellipsis;">
+                                    <%= e.updatedAt ? e.updatedAt : e.createdAt %> 
+                                </div>
+                            </div>
+                        </a>
+                    </div>    
+                    
+                    
+
+
+                <% }) : null%>
+            <% } else { %>
+             <script>
+                 window.location.reload()
+             </script>
+            <<% } %>>
+        </div>
+    </div>
+
+
+</body>
+</html>
